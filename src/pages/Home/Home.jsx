@@ -1,14 +1,15 @@
-import Footer from "../../shared/Footer/Footer";
+// import Footer from "../../shared/Footer/Footer";
 import Navbar from "../../shared/Navbar/Navbar";
-import AppAd from "./AppAd/AppAd";
-import ClientReviews from "./ClientReviews/ClientReviews";
-import Faq from "./ClientReviews/Faq";
-import FaqHalf from "./ClientReviews/FaqHalf";
+// import AppAd from "./AppAd/AppAd";
+// import ClientReviews from "./ClientReviews/ClientReviews";
+// import Faq from "./ClientReviews/Faq";
+// import FaqHalf from "./ClientReviews/FaqHalf";
 import Hero from "./Hero/Hero";
-import HowItWork from "./HowItWork/HowItWork";
-import OurVision from "./OurVision/OurVision";
-import WhatWeDo from "./WhatWeDo/WhatWeDo";
-import WhyDigiyog from "./WhyDigiyog/WhyDigiyog";
+
+// import HowItWork from "./HowItWork/HowItWork";
+// import OurVision from "./OurVision/OurVision";
+// import WhatWeDo from "./WhatWeDo/WhatWeDo";
+// import WhyDigiyog from "./WhyDigiyog/WhyDigiyog";
 
 const Home = () => {
   return (

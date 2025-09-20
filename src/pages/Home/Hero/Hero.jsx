@@ -6,6 +6,7 @@ import { SplitText } from "gsap/SplitText";
 import heroImg from "../../../assets/hero/hero-img.png";
 import topArrow from "../../../assets/hero/top-arrow.png";
 import downArrow from "../../../assets/hero/down-arrow.png";
+import HeroTwo from "./HeroTwo";
 
 const Hero = () => {
   const titleRef = useRef(null);
@@ -77,7 +78,7 @@ const Hero = () => {
           {/* Hero Image */}
           <img
             src={heroImg}
-            className="relative max-w-[80%] sm:max-w-sm md:max-w-md lg:max-w-2xl rounded-lg z-0"
+            className="relative max-w-[80%] sm:max-w-sm md:max-w-md lg:max-w-2xl rounded-lg z-10"
             id="heroImg"
           />
 
@@ -109,6 +110,9 @@ const Hero = () => {
             Book Your First Consultation
           </button>
         </div>
+      </div>
+      <div className="lg:absolute bottom-16 -z-10 mt-10 lg:mt-0">
+        <HeroTwo />
       </div>
     </div>
   );
