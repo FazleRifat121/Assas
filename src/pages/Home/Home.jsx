@@ -5,6 +5,7 @@ import Navbar from "../../shared/Navbar/Navbar";
 // import Faq from "./ClientReviews/Faq";
 // import FaqHalf from "./ClientReviews/FaqHalf";
 import Hero from "./Hero/Hero";
+import OurMission from "./OurMission/OurMission";
 
 // import HowItWork from "./HowItWork/HowItWork";
 // import OurVision from "./OurVision/OurVision";
@@ -18,6 +19,7 @@ const Home = () => {
         <div className="max-w-[1800px] mx-auto p-4">
           <Navbar />
           <Hero />
+          <OurMission />
         </div>
       </div>
       {/* <div className="bg-[#06582C]">

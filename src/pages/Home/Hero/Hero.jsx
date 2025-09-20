@@ -64,7 +64,7 @@ const Hero = () => {
 
   return (
     <div className="mb-52">
-      <div className="flex justify-around gap-10 items-center flex-col lg:flex-row-reverse">
+      <div className="flex justify-around gap-10 items-center flex-col lg:flex-row-reverse min-h-screen">
         {/* Image Section */}
         <div className="relative w-full md:w-[500px] flex justify-center pb-20 z-0">
           {/* Top Arrow (hidden on small devices, positioned same as your code) */}
@@ -111,7 +111,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <div className="lg:absolute bottom-16 -z-10 mt-10 lg:mt-0">
+      <div className=" mt-10 lg:mt-0">
         <HeroTwo />
       </div>
     </div>
