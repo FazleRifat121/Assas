@@ -7,6 +7,7 @@ import Navbar from "../../shared/Navbar/Navbar";
 import Hero from "./Hero/Hero";
 import HeroTwo from "./Hero/HeroTwo";
 import OurMission from "./OurMission/OurMission";
+import WhatWeOffer from "./WhatWeOffer/WhatWeOffer";
 
 // import HowItWork from "./HowItWork/HowItWork";
 // import OurVision from "./OurVision/OurVision";
@@ -23,6 +24,7 @@ const Home = () => {
         </div>
         <HeroTwo />
         <OurMission />
+        <WhatWeOffer />
       </div>
       {/* <div className="bg-[#06582C]">
         <HowItWork />
