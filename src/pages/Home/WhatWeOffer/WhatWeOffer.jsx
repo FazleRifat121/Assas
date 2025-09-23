@@ -1,6 +1,6 @@
 import img1 from "../../../assets/whatweoffer/doctor.png";
 import telemedicine from "../../../assets/whatweoffer/telemedicine.png";
-import teleMental from "../../../assets/whatweoffer/teleMental.png";
+import teleMental from "../../../assets/whatweoffer/telemental.png";
 import spiritual from "../../../assets/whatweoffer/spiritual.png";
 import delivery from "../../../assets/whatweoffer/delivery.png";
 
