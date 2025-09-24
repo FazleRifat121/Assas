@@ -9,6 +9,7 @@ import HeroThree from "./Hero/HeroThree";
 import HeroTwo from "./Hero/HeroTwo";
 import OurMission from "./OurMission/OurMission";
 import WhatWeOffer from "./WhatWeOffer/WhatWeOffer";
+import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
 
 // import HowItWork from "./HowItWork/HowItWork";
 // import OurVision from "./OurVision/OurVision";
@@ -16,19 +17,20 @@ import WhatWeOffer from "./WhatWeOffer/WhatWeOffer";
 // import WhyDigiyog from "./WhyDigiyog/WhyDigiyog";
 
 const Home = () => {
-  return (
-    <div>
-      <div className="w-full  ">
-        <div className="max-w-[1800px] mx-auto p-4">
-          <Navbar />
-          <Hero />
-        </div>
-        <HeroTwo />
-        <OurMission />
-        <WhatWeOffer />
-      </div>
-      <HeroThree />
-      {/* <div className="bg-[#06582C]">
+	return (
+		<div>
+			<div className="w-full  ">
+				<div className="max-w-[1800px] mx-auto p-4">
+					<Navbar />
+					<Hero />
+				</div>
+				<HeroTwo />
+				<OurMission />
+				<WhatWeOffer />
+			</div>
+			<HeroThree />
+			<WhyChooseUs />
+			{/* <div className="bg-[#06582C]">
         <HowItWork />
         <WhyDigiyog />
       </div>
@@ -47,8 +49,8 @@ const Home = () => {
       <OurVision />
       <AppAd />
       <Footer color="bg-[#1E1E1E]" /> */}
-    </div>
-  );
+		</div>
+	);
 };
 
 export default Home;
