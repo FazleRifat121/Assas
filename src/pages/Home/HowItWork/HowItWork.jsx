@@ -1,87 +1,60 @@
-import { useState } from "react";
-import howPhone from "../../../assets/howitworks/howPhone.png";
-
-const faqs = [
-  {
-    step: 1,
-    badge: "Choose a Property",
-    show: "Land, flats, or resorts -  handpicked, legally verified.",
-  },
-  {
-    step: 2,
-    badge: "Invest from Just 500 Taka",
-    show: "Buy a fractional share secured by smart contract.",
-  },
-  {
-    step: 3,
-    badge: "Earn Rental Income or ROI",
-    show: "Get monthly rental or earn on appreciation when sold.",
-  },
-  {
-    step: 4,
-    badge: "Sell Anytime",
-    show: "Sell shares in our secondary market or to Digiyog.",
-  },
-];
+import img1 from "../../../assets/howitworks/img1.png";
+import img2 from "../../../assets/howitworks/img2.png";
+import img3 from "../../../assets/howitworks/img3.png";
+import img4 from "../../../assets/howitworks/img4.png";
 
 const HowItWork = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+	const datas = [
+		{
+			img: img1,
+			title: "Download or Open the App",
+		},
+		{
+			img: img2,
+			title: "Choose Your Service",
+			desc: "Medical, mental health, or spiritual wellness",
+		},
+		{
+			img: img3,
+			title: "Get Care Anywhere",
+			desc: "Online or at our local health hubs",
+		},
+		{
+			img: img4,
+			title: "Follow-up & Wellness Plans",
+			desc: "Continuous support for lasting health",
+		},
+	];
 
-  const formatFirstThreeWords = (text) => {
-    const words = text.trim().split(" ");
-    const firstThree = words.slice(0, 4).join(" ");
-    const rest = words.slice(4).join(" ");
-    return (
-      <div className="text-3xl max-w-full lg:w-96 text-green-900">
-        <span className="font-semibold font-montRegular">{firstThree}</span>{" "}
-        <span className="font-normal font-montRegular">{rest}</span>
-      </div>
-    );
-  };
+	return (
+		<div className="my-5">
+			<h2 className="text-4xl font-bold mb-8 ">How it works</h2>
 
-  return (
-    <div className="bg-[#06582C] relative font-montHeavy">
-      <div className="container mx-auto p-4">
-        <h1 className="text-7xl md:text-left text-center font-bold text-white my-7">
-          How it works
-        </h1>
-        <div className="bg-[#BCDC8F] p-5 rounded-3xl flex items-center flex-col-reverse lg:block ">
-          <div className="space-y-2 ml-0 lg:ml-20">
-            {faqs.map((faq, index) => (
-              <div
-                key={index}
-                className="p-4 rounded-md transition-all duration-200 hover:cursor-pointer"
-                onMouseEnter={() => setActiveIndex(index)}
-              >
-                <h3 className="font-semibold text-green-900">
-                  Step {faq.step}
-                </h3>
-                <div className="badge bg-[#06582C] text-white border-none rounded-2xl">
-                  {faq.badge}
-                </div>
+			<div className=" flex flex-col lg:flex-row justify-center items-center gap-10">
+				{datas.map((item, index) => (
+					<div
+						key={index}
+						className="relative w-72 h-96 bg-[#22B573] rounded-2xl shadow-lg flex flex-col items-center justify-end p-6"
+					>
+						<div className="absolute top-10 w-48 h-48 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden">
+							<img
+								src={item.img}
+								alt={item.title}
+								className="object-contain w-32 h-32"
+							/>
+						</div>
 
-                {activeIndex === index &&
-                  (faq.step === 1 ? (
-                    formatFirstThreeWords(faq.show)
-                  ) : (
-                    <div className="text-3xl max-w-full lg:w-96 text-green-900 font-montRegular">
-                      {faq.show}
-                    </div>
-                  ))}
-              </div>
-            ))}
-          </div>
-          <div>
-            <img
-              src={howPhone}
-              alt="phone img"
-              className="lg:absolute top-[157px] left-[600px] xl:left-[800px] 2xl:left-[1200px]"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+						<p className="text-white text-center font-bold text-xl mb-6">
+							{item.title}
+						</p>
+						{item.desc && (
+							<p className="text-white text-center text-sm">{item.desc}</p>
+						)}
+					</div>
+				))}
+			</div>
+		</div>
+	);
 };
 
 export default HowItWork;

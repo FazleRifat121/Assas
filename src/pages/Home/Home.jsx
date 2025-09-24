@@ -10,8 +10,8 @@ import HeroTwo from "./Hero/HeroTwo";
 import OurMission from "./OurMission/OurMission";
 import WhatWeOffer from "./WhatWeOffer/WhatWeOffer";
 import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
+import HowItWork from "./HowItWork/HowItWork";
 
-// import HowItWork from "./HowItWork/HowItWork";
 // import OurVision from "./OurVision/OurVision";
 // import WhatWeDo from "./WhatWeDo/WhatWeDo";
 // import WhyDigiyog from "./WhyDigiyog/WhyDigiyog";
@@ -30,8 +30,8 @@ const Home = () => {
 			</div>
 			<HeroThree />
 			<WhyChooseUs />
+			<HowItWork />
 			{/* <div className="bg-[#06582C]">
-        <HowItWork />
         <WhyDigiyog />
       </div>
       <div className="relative">
