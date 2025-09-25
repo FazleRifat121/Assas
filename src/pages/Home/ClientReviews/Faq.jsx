@@ -1,7 +1,6 @@
 import { useGSAP } from "@gsap/react";
-import { IoMdArrowForward } from "react-icons/io";
+import img1 from "../../../assets/faq/doc.png"
 import gsap from "gsap";
-import { Link } from "react-router";
 import { useState } from "react";
 
 const faqData = [
@@ -50,9 +49,10 @@ const Faq = () => {
       <h1 className="text-3xl text-center mb-4">Frequently Asked Questions</h1>
       <div className="container mx-auto p-4 bg-[#D9D9D9] rounded-3xl relative z-10">
         
-        <div className="flex flex-col items-center justify-around lg:flex-row ">
+        <div className="flex flex-col items-center justify-around lg:flex-row-reverse ">
           
-          <div className="lg:w-52 text-center  mt-20">
+          <div className="lg:w-52  mt-20">
+            <img src ={img1} />
           </div>
           <div className="mt-20" id="faqCards">
             {faqData.map((faq, index) => (
