@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 import { FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
-import { AiFillInstagram } from "react-icons/ai";
-import { FaFacebookSquare } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 
 const Footer = ({ color }) => {
@@ -17,7 +17,7 @@ const Footer = ({ color }) => {
               to="/"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <img src="/footer.svg" alt="logo" className="w-40 mb-2" />
+              <img src="/footer.png" alt="logo" className="w-40 mb-2" />
             </Link>
           </div>
           <div></div>
@@ -42,24 +42,19 @@ const Footer = ({ color }) => {
             </div>
 
             <div className="grid grid-flow-col gap-2.5 md:gap-4 mt-6 lg:mt-0">
-              <a href="mailto:hello@digiyog.app">
-                <IoMdMail className="text-xl" />
+              
+              <a>
+                <FaSquareXTwitter className="text-xl text-blue-400" />
               </a>
               <a>
-                <FaLinkedinIn className="text-xl" />
-              </a>
-              <a>
-                <FaXTwitter className="text-xl" />
-              </a>
-              <a>
-                <AiFillInstagram className="text-xl" />
+                <FaInstagram className="text-xl text-[#E1306C]" />
               </a>
               <a
-                href="https://www.facebook.com/digiyog.official/"
+                href="https://www.facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaFacebookSquare className="text-xl" />
+                <FaFacebook className="text-xl text-blue-600" />
               </a>
             </div>
           </div>
