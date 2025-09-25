@@ -65,3 +65,8 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
+.herofour{
+  background-image: url("../src/assets/hero/Doc.png");
+  background-size: cover;
+  background-position: center;
+}
