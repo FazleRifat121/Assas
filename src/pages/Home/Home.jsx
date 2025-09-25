@@ -2,7 +2,7 @@
 import Navbar from "../../shared/Navbar/Navbar";
 // import AppAd from "./AppAd/AppAd";
 // import ClientReviews from "./ClientReviews/ClientReviews";
-// import Faq from "./ClientReviews/Faq";
+import Faq from "./ClientReviews/Faq";
 // import FaqHalf from "./ClientReviews/FaqHalf";
 import Hero from "./Hero/Hero";
 import HeroThree from "./Hero/HeroThree";
@@ -11,7 +11,7 @@ import OurMission from "./OurMission/OurMission";
 import WhatWeOffer from "./WhatWeOffer/WhatWeOffer";
 import WhyChooseUs from "./WhyChooseUs/WhyChooseUs";
 import HowItWork from "./HowItWork/HowItWork";
-
+import HeroFour from "../../pages/Home/Hero/HeroFour"
 // import OurVision from "./OurVision/OurVision";
 // import WhatWeDo from "./WhatWeDo/WhatWeDo";
 // import WhyDigiyog from "./WhyDigiyog/WhyDigiyog";
@@ -31,6 +31,7 @@ const Home = () => {
 			<HeroThree />
 			<WhyChooseUs />
 			<HowItWork />
+      <HeroFour/>
 			{/* <div className="bg-[#06582C]">
         <WhyDigiyog />
       </div>
@@ -49,6 +50,8 @@ const Home = () => {
       <OurVision />
       <AppAd />
       <Footer color="bg-[#1E1E1E]" /> */}
+      
+      <Faq/>
 		</div>
 	);
 };
