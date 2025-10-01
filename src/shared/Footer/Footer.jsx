@@ -1,63 +1,98 @@
 import { Link } from "react-router";
-import { FaLinkedinIn, FaInstagram, FaFacebook } from "react-icons/fa";
+import { FaInstagram, FaFacebook } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { IoMdMail } from "react-icons/io";
 
-const Footer = ({ color }) => {
+const Footer = ({ color = "bg-[#18332A]" }) => {
   return (
-    <div className={`${color} text-neutral-content`}>
-      <div className="container mx-auto p-4">
-        <footer className={`footer px-6 py-8 grid md:grid-cols-3 gap-8 ${color}`}>
-          
-          {/* Logo + Socials */}
-          <div className="flex flex-col items-center md:items-start">
+    <div className={`${color} text-white`}>
+      <div className="container mx-auto px-6 py-12">
+        <footer className="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+          {/* Left Section: Logo + Socials */}
+          <div className="flex flex-col items-start">
             <Link
               to="/"
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
-              <img src="/footer.png" alt="logo" className="w-40 mb-4" />
+              <img src="/footer.png" alt="logo" className="w-40 mb-6" />
             </Link>
 
             {/* Social Icons */}
-            <div className="flex gap-4 mt-2">
-              <a href="#" aria-label="Twitter">
-                <FaSquareXTwitter className="text-xl text-blue-400 hover:opacity-80" />
+            <div className="flex gap-4">
+              <a href="#" aria-label="Facebook">
+                <FaFacebook className="text-2xl hover:opacity-80" />
               </a>
               <a href="#" aria-label="Instagram">
-                <FaInstagram className="text-xl" style={{ color: '#E1306C' }} />
+                <FaInstagram className="text-2xl hover:opacity-80" />
               </a>
-              <a
-                href="https://www.facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <FaFacebook className="text-xl text-blue-600 hover:opacity-80" />
+              <a href="#" aria-label="Twitter/X">
+                <FaSquareXTwitter className="text-2xl hover:opacity-80" />
               </a>
             </div>
           </div>
 
-          {/* Links Group 1 */}
-          <div className="flex flex-col gap-2 text-center md:text-left">
-            <a className="link link-hover">About</a>
-            <a className="link link-hover">Contact Us</a>
-            <a className="link link-hover">Careers</a>
-            <a className="link link-hover">Blog</a>
+          {/* Middle Section: Privacy Policy */}
+          <div className="text-left">
+            <h4 className="font-semibold mb-3">Privacy Policy</h4>
+            <ul className="space-y-1 text-sm text-gray-200">
+              <li>
+                <a href="#" className="hover:underline">
+                  Introduction & Scope
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Data Collection
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  How Data is Used
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Data Sharing & Disclosure
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Data Security
+                </a>
+              </li>
+            </ul>
           </div>
 
-          {/* Links Group 2 */}
-          <div className="flex flex-col gap-2 text-center md:text-left">
-            <Link className="link link-hover">Privacy Policy</Link>
-            <Link
-              to="/terms"
-              className="link link-hover"
-              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-            >
-              Terms
-            </Link>
-            <a className="link link-hover">Legal</a>
+          {/* Right Section: Terms */}
+          <div className="text-left">
+            <h4 className="font-semibold mb-3">Terms</h4>
+            <ul className="space-y-1 text-sm text-gray-200">
+              <li>
+                <a href="#" className="hover:underline">
+                  Introduction & Scope
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Data Collection
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  How Data is Used
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Data Sharing & Disclosure
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:underline">
+                  Data Security
+                </a>
+              </li>
+            </ul>
           </div>
-
         </footer>
       </div>
     </div>
