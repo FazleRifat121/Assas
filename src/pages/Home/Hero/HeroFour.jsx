@@ -2,7 +2,7 @@ const HeroFour = () => {
   return (
     <div className="herofour h-[50vh] lg:h-[120dvh] flex flex-col justify-center lg:justify-between items-center text-center py-10">
       {/* Centered heading */}
-      <h1 className="text-2xl lg:text-3xl  mt-[480px] lg:mt-16 -ml-4">
+      <h1 className="text-2xl lg:text-3xl  mt-[400px] lg:mt-16 -ml-4">
         Together for a <br />
         <span className="text-[#22B573]">Healthier</span> Tomorrow
       </h1>
