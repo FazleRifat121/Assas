@@ -40,7 +40,7 @@ const HowItWork = () => {
               <img
                 src={item.img}
                 alt={item.title}
-                className="object-contain w-32 h-32"
+                className="object-contain w-full"
               />
             </div>
 
