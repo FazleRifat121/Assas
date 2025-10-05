@@ -18,7 +18,7 @@ const Footer = ({ color = "bg-[#18332A]" }) => {
 
             {/* Social Icons */}
             <div className="flex gap-4">
-              <a href="#" aria-label="Facebook">
+              <a href="https://www.facebook.com/share/17DHBJzX2r/?mibextid=wwXIfr" aria-label="Facebook">
                 <FaFacebook className="text-2xl hover:opacity-80" />
               </a>
               <a href="#" aria-label="Instagram">
