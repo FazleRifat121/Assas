@@ -47,10 +47,17 @@ const WhyChooseUs = () => {
   ];
 
   useEffect(() => {
-    if (window.innerWidth < 1024) return;
-
     const allCards = [...firstRowRef.current, ...secondRowRef.current];
 
+    // 🔹 For mobile/tablet — show instantly
+    if (window.innerWidth < 1024) {
+      allCards.forEach((card) => {
+        if (card) gsap.set(card, { opacity: 1, x: 0 });
+      });
+      return;
+    }
+
+    // 🔹 For desktop — animate left to right
     gsap.fromTo(
       allCards,
       { x: -100, opacity: 0 },
@@ -59,11 +66,11 @@ const WhyChooseUs = () => {
         opacity: 1,
         duration: 0.8,
         ease: "power3.out",
-        stagger: 0.3, // each card appears one after another
+        stagger: 0.3,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%", // start animation when section enters viewport
-          toggleActions: "play reverse play reverse", // replay when scrolled back up
+          start: "top 80%",
+          toggleActions: "play reverse play reverse",
         },
       }
     );
