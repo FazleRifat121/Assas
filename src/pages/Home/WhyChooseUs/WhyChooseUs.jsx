@@ -11,6 +11,7 @@ import mobile from "../../../assets/whychooseus/mobile.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const WhyChooseUs = () => {
+  const sectionRef = useRef(null);
   const firstRowRef = useRef([]);
   const secondRowRef = useRef([]);
 
@@ -46,52 +47,38 @@ const WhyChooseUs = () => {
   ];
 
   useEffect(() => {
-    // Only run on large devices
     if (window.innerWidth < 1024) return;
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: firstRowRef.current[0], // trigger on first box
-        start: "top 90%",
-        toggleActions: "restart reverse restart reverse",
-      },
-    });
+    const allCards = [...firstRowRef.current, ...secondRowRef.current];
 
-    // Animate first row
-    firstRowRef.current.forEach((el, i) => {
-      tl.fromTo(
-        el,
-        { x: -50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power3.out",
-          delay: i * 0.1,
-        }
-      );
-    });
-
-    // Animate second row after first row finishes
-    secondRowRef.current.forEach((el, i) => {
-      tl.fromTo(
-        el,
-        { x: -50, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          duration: 0.6,
-          ease: "power3.out",
-          delay: i * 0.1,
+    gsap.fromTo(
+      allCards,
+      { x: -100, opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.3, // each card appears one after another
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top 80%", // start animation when section enters viewport
+          toggleActions: "play reverse play reverse", // replay when scrolled back up
         },
-        ">0.2" // slight gap after first row
-      );
-    });
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
   }, []);
 
   return (
-    <section className="relative py-12 px-4 bg-[#22B573]">
-      <h2 className="text-4xl font-bold mb-8">
+    <section
+      ref={sectionRef}
+      className="relative py-12 px-4 bg-[#22B573] overflow-hidden"
+    >
+      <h2 className="text-4xl font-bold mb-8 text-white">
         Why <br /> Choose Us
       </h2>
 
@@ -101,9 +88,9 @@ const WhyChooseUs = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-center mb-8">
             {firstRow.map((item, index) => (
               <div
-                className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start p-6 border border-white rounded-3xl shadow-md w-full lg:w-96 opacity-0"
                 key={index}
                 ref={(el) => (firstRowRef.current[index] = el)}
+                className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start p-6 border border-white rounded-3xl shadow-md w-full lg:w-96 opacity-0"
               >
                 <img
                   src={item.img}
@@ -122,9 +109,9 @@ const WhyChooseUs = () => {
           <div className="flex flex-col lg:flex-row gap-8 items-center lg:ml-20">
             {secondRow.map((item, index) => (
               <div
-                className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start p-6 border border-white rounded-3xl shadow-md w-full lg:w-96 opacity-0"
                 key={index}
                 ref={(el) => (secondRowRef.current[index] = el)}
+                className="flex flex-col lg:flex-row gap-4 lg:gap-6 items-start p-6 border border-white rounded-3xl shadow-md w-full lg:w-96 opacity-0"
               >
                 <img
                   src={item.img}
@@ -139,7 +126,8 @@ const WhyChooseUs = () => {
             ))}
           </div>
         </div>
-        <img src={mobile} alt="Mobile" />
+
+        <img src={mobile} alt="Mobile" className="max-w-xs lg:max-w-md" />
       </div>
     </section>
   );
