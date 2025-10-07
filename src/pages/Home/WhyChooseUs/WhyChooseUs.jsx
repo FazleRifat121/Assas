@@ -47,36 +47,63 @@ const WhyChooseUs = () => {
 	];
 
 	useEffect(() => {
-		const allCards = [...firstRowRef.current, ...secondRowRef.current];
+		const firstCards = firstRowRef.current;
+		const secondCards = secondRowRef.current;
 
-		// 🔹 For mobile/tablet — show instantly
+		// Mobile/tablet: show instantly
 		if (window.innerWidth < 1024) {
-			allCards.forEach((card) => {
+			[...firstCards, ...secondCards].forEach((card) => {
 				if (card) gsap.set(card, { opacity: 1, x: 0 });
 			});
 			return;
 		}
 
-		// 🔹 For desktop — animate left to right
-		gsap.fromTo(
-			allCards,
-			{ x: -100, opacity: 0 },
-			{
-				x: 0,
-				opacity: 1,
-				duration: 0.8,
-				ease: "power3.out",
-				stagger: 0.3,
-				scrollTrigger: {
-					trigger: sectionRef.current,
-					start: "top 80%",
-					toggleActions: "play reverse play reverse",
-				},
-			}
-		);
+		// Animate first row (slide from left) — play once
+		firstCards.forEach((card) => {
+			if (!card) return;
+			gsap.fromTo(
+				card,
+				{ x: -100, opacity: 0 },
+				{
+					x: 0,
+					opacity: 1,
+					duration: 0.8,
+					stagger: 0.2,
+					ease: "power3.out",
+					scrollTrigger: {
+						trigger: card,
+						start: "top 80%",
+						toggleActions: "play none none none", // ✅ play only once
+						markers: false, // remove or set true to debug
+					},
+				}
+			);
+		});
+
+		// Animate second row (slide from right) — play once
+		secondCards.forEach((card) => {
+			if (!card) return;
+			gsap.fromTo(
+				card,
+				{ x: 100, opacity: 0 },
+				{
+					x: 0,
+					opacity: 1,
+					duration: 0.8,
+					stagger: 0.2,
+					ease: "power3.out",
+					scrollTrigger: {
+						trigger: card,
+						start: "top 80%",
+						toggleActions: "play none none none", // ✅ play only once
+						markers: false,
+					},
+				}
+			);
+		});
 
 		return () => {
-			ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+			ScrollTrigger.getAll().forEach((t) => t.kill());
 		};
 	}, []);
 
